@@ -1,3 +1,3 @@
 fun main() {
-    println("8 = 0b1000")
+    println((readLine()!!.toIntOrNull() ?: 0) % 8)
 }
