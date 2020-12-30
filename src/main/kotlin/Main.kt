@@ -1,8 +1,7 @@
 fun main() {
-    val number = readLine()!!.toLongOrNull() ?: 0L
-    val radixNum = readLine()!!.toIntOrNull() ?: 2
-    val prefix =
-        if (radixNum == 2) "0b" else if (radixNum == 8) "0" else if (radixNum == 16) "0x" else "${radixNum}B-"
+    val sourceRad = readLine()!!.toInt()
+    val number = if (sourceRad == 1) readLine()!!.length else readLine()!!.toInt(sourceRad)
+    val changeRad = readLine()!!.toInt()
 
-    println(prefix + number.toString(radixNum))
+    println(if (changeRad == 1) "1".repeat(number) else number.toString(changeRad))
 }
