@@ -1,12 +1,18 @@
-fun main() {
-    val sourceRad = readLine()!!.toInt()
-    var number = if (sourceRad == 1) readLine()!!.length.toString() else readLine()!!
-    val changeRad = readLine()!!.toInt()
+import java.lang.Exception
 
-    if (sourceRad != 10 && sourceRad != 1) number = toDecimal(number, sourceRad)
-    if (changeRad == 1) number = "1".repeat(number.toInt()) else if (changeRad != 10) number =
-        toBase(number, changeRad)
-    println(number)
+fun main() {
+    try {
+        val sourceRad = readLine()!!.toInt()
+        var number = if (sourceRad == 1) readLine()!!.length.toString() else readLine()!!
+        val changeRad = readLine()!!.toInt()
+
+        if (sourceRad != 10 && sourceRad != 1) number = toDecimal(number, sourceRad)
+        if (changeRad == 1) number = "1".repeat(number.toInt()) else if (changeRad != 10) number =
+            toBase(number, changeRad)
+        println(number)
+    } catch (e: Exception) {
+        println("error")
+    }
 }
 
 fun toDecimal(number: String, radix: Int): String {
